@@ -10,6 +10,9 @@ Vagrant.configure("2") do |config|
       vb.cpus = "2"
       vb.memory = "4096"
     end
-    RTBv.vm.provision "shell", path: "scripts/rtb-provision.sh"
+    RTBv.vm.provision "shell", path: "files/rtb-provision.sh"
+    #check if deleting the file first is needed
+    config.vm.provision "file", source: "files/resolv.conf", destination: "/etc/resolv.conf"
+    config.vm.provision "file", source: "files/firehol.conf", destination: "/etc/firehol/firehol.conf"
   end
 end

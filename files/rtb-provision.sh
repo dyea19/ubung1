@@ -9,7 +9,15 @@ apt-get -y install build-essential
 ## vboxlinuxadditions.run
 
 apt-get -y install dnsmasq 
+apt-get -y install firehol
+
+#systemctl stop system-resolved.service
+#systemctl disable system-resolved.service
+
+journalctl -xe
+systemctl restart dnsmasq
+systemctl enable dnsmasq
 
 
-systemctl enable --now docker
-adduser vagrant docker
+
+adduser vagrant rtb
