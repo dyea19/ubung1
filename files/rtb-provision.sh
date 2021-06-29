@@ -18,6 +18,13 @@ journalctl -xe
 systemctl restart dnsmasq
 systemctl enable dnsmasq
 
+rm -f /etc/resolv.conf
+cp /etc/resolv.conf-new /etc/resolv.conf 
+cp /etc/firehol.conf-new /etc/firehol/firehol.conf
+
+firehol try
+
+
 
 
 adduser vagrant rtb

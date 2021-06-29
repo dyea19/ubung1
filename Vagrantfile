@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
     end
     RTBv.vm.provision "shell", path: "files/rtb-provision.sh"
     #check if deleting the file first is needed
-    config.vm.provision "file", source: "files/resolv.conf", destination: "/etc/resolv.conf"
-    config.vm.provision "file", source: "files/firehol.conf", destination: "/etc/firehol/firehol.conf"
+    config.vm.provision "file", source: "files/resolv.conf", destination: "/etc/resolv.conf-new"
+    config.vm.provision "file", source: "files/firehol.conf", destination: "/etc/firehol.conf-new"
   end
 end
