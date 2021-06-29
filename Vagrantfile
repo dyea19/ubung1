@@ -4,7 +4,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/focal64"
   config.vm.define "RTB-v" do |RTBv|
     RTBv.vm.hostname = "RTB-v"
-    RTBv.vm.network "private_network", ip: "132.168.100.100", virtualbox__intnet: "mynetwork"
+    RTBv.vm.network "private_network", ip: "192.168.100.2", virtualbox__intnet: "mynetwork"
     RTBv.vm.provider "virtualbox" do |vb|
       vb.name = "RTBv"
       vb.cpus = "2"
